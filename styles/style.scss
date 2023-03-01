@@ -1,0 +1,25 @@
+
+$background-blue: #004980;
+$blue:#C2F5FF;
+
+@font-face {
+    font-family: 'StratosSkyeng';
+    src: url(/content/fonts/stratosskyeng-regular.otf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.app{
+    width: 100%;
+    height: 100vh;
+    background-color: $background-blue;
+    display: grid;
+    place-items: center;  
+}
+
+
+
+@import 'start-menu';

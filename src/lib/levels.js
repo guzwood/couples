@@ -4,41 +4,34 @@ window.addEventListener('load', () => {
 
 
 // Кнопки сложности
-function renderLevelsButton(container){
-    const levelButton_1 = document.createElement('button')
-    const levelButton_2 = document.createElement('button')
-    const levelButton_3 = document.createElement('button')
-
-    levelButton_1.classList.add('app_level_main_button')
-    levelButton_2.classList.add('app_level_main_button')
-    levelButton_3.classList.add('app_level_main_button')
-
-    levelButton_1.textContent = '1'
-    levelButton_2.textContent = '2'
-    levelButton_3.textContent = '3'
-
-    container.appendChild(levelButton_1);
-    container.appendChild(levelButton_2);
-    container.appendChild(levelButton_3);
+function renderLevelsButton(container){ 
+    for ( i = 1; i <= 3; i++) {  
+        const levelButton = document.createElement('input')
+        levelButton.setAttribute('type', 'button')
+        levelButton.setAttribute('value', i)
+        levelButton.classList.add('level_main_button')
+        container.appendChild(levelButton);
+        
+        levelButton.addEventListener('click', () => {
+            console.log(`Сложность ${levelButton.value}`);
+            });
+    }
 }
 
 
 // Кнопка запуска
 function renderStartButton(container){
     const startButton = document.createElement('button')
-
-    startButton.classList.add('app_level_footer_button')
+    startButton.classList.add('level_footer_button')
     startButton.textContent = 'Старт'
-
     container.appendChild(startButton);
 }
 
 
 function renderMenuTitle(container) { 
     const levelTitle = document.createElement('h1')
-    levelTitle.classList.add('app_level_header_title')
+    levelTitle.classList.add('level_header_title')
     levelTitle.textContent = 'Выбери сложность'
-
     container.appendChild(levelTitle);
 }
 
@@ -51,16 +44,16 @@ window.application.blocks['start-button'] = renderStartButton;
 
 function renderStartMenu(){
     const startMenuContainer = document.createElement('div')
-    startMenuContainer.classList.add('app_level')
+    startMenuContainer.classList.add('level')
 
     const startMenuHeader = document.createElement('div')
-    startMenuHeader.classList.add('app_level_header')
+    startMenuHeader.classList.add('level_header')
 
     const startMenuLevel = document.createElement('div')
-    startMenuLevel.classList.add('app_level_main')
+    startMenuLevel.classList.add('level_main')
 
     const startMenuStart = document.createElement('div')
-    startMenuStart.classList.add('app_level_footer')
+    startMenuStart.classList.add('level_footer')
 
     startMenuContainer.appendChild(startMenuHeader);
     startMenuContainer.appendChild(startMenuLevel);

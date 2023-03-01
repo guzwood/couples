@@ -1,6 +1,6 @@
 @font-face {
   font-family: "StratosSkyeng";
-  src: url(content/fonts/statosskyeng-v1.001/Web\ fonts/statosskyeng-v1);
+  src: url(/content/fonts/stratosskyeng-regular.otf);
 }
 body {
   margin: 0;
@@ -14,7 +14,8 @@ body {
   display: grid;
   place-items: center;
 }
-.app_level {
+
+.level {
   position: absolute;
   width: 480px;
   height: 460px;
@@ -23,11 +24,12 @@ body {
   display: grid;
   place-items: center;
 }
-.app_level_header {
+.level_header {
   width: 208px;
   height: 96px;
 }
-.app_level_header_title {
+.level_header_title {
+  font-family: "StratosSkyeng";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -36,13 +38,13 @@ body {
   font-feature-settings: "pnum" on, "lnum" on;
   color: #004980;
 }
-.app_level_main {
+.level_main {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
 }
-.app_level_main_button {
+.level_main_button {
   width: 98px;
   height: 98px;
   background: #FFFFFF;
@@ -52,13 +54,22 @@ body {
   font-weight: 400;
   font-size: 64px;
   line-height: 72px;
+  border: 0;
+  transition: 0.3s ease;
 }
-.app_level_footer {
+.level_main_button:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 1px 0px 1px rgba(48, 48, 48, 0.671);
+}
+.level_footer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.app_level_footer_button {
+.level_footer_button {
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
   width: 246px;
   height: 50px;
   background: #7AC100;
@@ -66,4 +77,11 @@ body {
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
+  color: #FFFFFF;
+  border: 0;
+  transition: 0.3s ease;
+}
+.level_footer_button:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 1px 0px 0px rgba(48, 48, 48, 0.671);
 }/*# sourceMappingURL=style.css.map */

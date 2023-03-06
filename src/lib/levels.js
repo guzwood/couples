@@ -11,19 +11,45 @@ function renderLevelsButton(container){
         levelButton.setAttribute('value', i)
         levelButton.classList.add('level_main_button')
         container.appendChild(levelButton);
-        
+
         levelButton.addEventListener('click', () => {
-            console.log(`Сложность ${levelButton.value}`);
+                switch (levelButton.value) {
+                    case '1':
+                        levelsEvent('1')
+                    break;
+                       
+                    case '2':
+                        levelsEvent('2')
+                    break;
+
+                    case '3':
+                        levelsEvent('3')
+                    break;
+
+                    default:
+                    break;
+                }
             });
     }
+
+    
 }
 
+function levelsEvent(param) {
+    startButton.addEventListener('click', () => {
+        window.application.renderScreen('game');
+        console.log(`Уровень сложности ${param}`);
+    });
+}
 
 // Кнопка запуска
+
+let startButton;
+
 function renderStartButton(container){
-    const startButton = document.createElement('button')
+    startButton = document.createElement('button')
     startButton.classList.add('level_footer_button')
-    startButton.textContent = 'Старт'
+    startButton.textContent = 'Старт';
     container.appendChild(startButton);
 }
 

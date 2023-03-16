@@ -1,15 +1,21 @@
-
 $background-blue: #004980;
 $blue:#C2F5FF;
+$font: 'StratosSkyeng';
 
 @font-face {
     font-family: 'StratosSkyeng';
     src: url(/content/fonts/stratosskyeng-regular.otf);
 }
 
+.center{
+    padding-left: calc(50% - 500px);
+    padding-right: calc(50% - 500px);
+}
+
 body{
     margin: 0;
     padding: 0;
+    background-color: $background-blue;
 }
 
 .app{
@@ -23,3 +29,4 @@ body{
 
 
 @import 'start-menu';
+@import 'game';

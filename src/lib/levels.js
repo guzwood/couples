@@ -1,98 +1,92 @@
-window.addEventListener('load', () => {
-    window.application.renderScreen('menu-start');
-});
-
+window.addEventListener("load", () => {
+    window.application.renderScreen("menu-start")
+})
 
 // Кнопки сложности
-function renderLevelsButton(container){ 
-    for ( i = 1; i <= 3; i++) {  
-        const levelButton = document.createElement('input')
-        levelButton.setAttribute('type', 'button')
-        levelButton.setAttribute('value', i)
-        levelButton.classList.add('level_main_button')
-        container.appendChild(levelButton);
+function renderLevelsButton(container) {
+    for (i = 1; i <= 3; i++) {
+        const levelButton = document.createElement("input")
+        levelButton.setAttribute("type", "button")
+        levelButton.setAttribute("value", i)
+        levelButton.classList.add("level_main_button")
+        container.appendChild(levelButton)
 
-        levelButton.addEventListener('click', () => {
-                switch (levelButton.value) {
-                    case '1':
-                        levelsEvent('1')
-                    break;
-                       
-                    case '2':
-                        levelsEvent('2')
-                    break;
+        levelButton.addEventListener("click", () => {
+            window.application.level.pop()
+            window.application.level.push(levelButton.value)
 
-                    case '3':
-                        levelsEvent('3')
-                    break;
+            switch (levelButton.value) {
+                case "1":
+                    levelsEvent("1")
+                    break
 
-                    default:
-                    break;
-                }
-            });
+                case "2":
+                    levelsEvent("2")
+                    break
+
+                case "3":
+                    levelsEvent("3")
+                    break
+
+                default:
+                    break
+            }
+        })
     }
-
-    
 }
 
 function levelsEvent(param) {
-    startButton.addEventListener('click', () => {
-        window.application.renderScreen('game');
-        console.log(`Уровень сложности ${param}`);
-    });
+    startButton.addEventListener("click", () => {
+        window.application.renderScreen("game")
+        console.log(`Уровень сложности ${param}`)
+    })
 }
 
 // Кнопка запуска
 
-let startButton;
+let startButton
 
-function renderStartButton(container){
-    startButton = document.createElement('button')
-    startButton.classList.add('level_footer_button')
-    startButton.textContent = 'Старт';
-    container.appendChild(startButton);
+function renderStartButton(container) {
+    startButton = document.createElement("button")
+    startButton.classList.add("level_footer_button")
+    startButton.textContent = "Старт"
+    container.appendChild(startButton)
 }
 
-
-function renderMenuTitle(container) { 
-    const levelTitle = document.createElement('h1')
-    levelTitle.classList.add('level_header_title')
-    levelTitle.textContent = 'Выбери сложность'
-    container.appendChild(levelTitle);
+function renderMenuTitle(container) {
+    const levelTitle = document.createElement("h1")
+    levelTitle.classList.add("level_header_title")
+    levelTitle.textContent = "Выбери сложность"
+    container.appendChild(levelTitle)
 }
 
+window.application.blocks["menu-title"] = renderMenuTitle
+window.application.blocks["level-button"] = renderLevelsButton
+window.application.blocks["start-button"] = renderStartButton
 
-window.application.blocks['menu-title'] = renderMenuTitle;
-window.application.blocks['level-button'] = renderLevelsButton;
-window.application.blocks['start-button'] = renderStartButton;
+function renderStartMenu() {
+    const startMenuContainer = document.createElement("div")
+    startMenuContainer.classList.add("level")
 
+    const startMenuHeader = document.createElement("div")
+    startMenuHeader.classList.add("level_header")
 
+    const startMenuLevel = document.createElement("div")
+    startMenuLevel.classList.add("level_main")
 
-function renderStartMenu(){
-    const startMenuContainer = document.createElement('div')
-    startMenuContainer.classList.add('level')
+    const startMenuStart = document.createElement("div")
+    startMenuStart.classList.add("level_footer")
 
-    const startMenuHeader = document.createElement('div')
-    startMenuHeader.classList.add('level_header')
+    startMenuContainer.appendChild(startMenuHeader)
+    startMenuContainer.appendChild(startMenuLevel)
+    startMenuContainer.appendChild(startMenuStart)
 
-    const startMenuLevel = document.createElement('div')
-    startMenuLevel.classList.add('level_main')
+    app.appendChild(startMenuContainer)
 
-    const startMenuStart = document.createElement('div')
-    startMenuStart.classList.add('level_footer')
-
-    startMenuContainer.appendChild(startMenuHeader);
-    startMenuContainer.appendChild(startMenuLevel);
-    startMenuContainer.appendChild(startMenuStart);
-    
-    app.appendChild(startMenuContainer);
-
-
-    window.application.renderBlock('menu-title', startMenuHeader);
-    window.application.renderBlock('level-button', startMenuLevel);
-    window.application.renderBlock('start-button', startMenuStart);
+    window.application.renderBlock("menu-title", startMenuHeader)
+    window.application.renderBlock("level-button", startMenuLevel)
+    window.application.renderBlock("start-button", startMenuStart)
 }
 
-window.application.screens['menu-start'] = renderStartMenu; 
-
-
+window.application.screens["menu-start"] = renderStartMenu
+window.application.cards.push(cards)

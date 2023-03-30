@@ -1,6 +1,7 @@
 .game{
     width: 100%;
     height: 100vh;
+
     &_header{
         display: flex;
         width: 100%;
@@ -15,16 +16,13 @@
         gap: 12px;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: auto auto;
-        // grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
-        
-        // justify-content: center;
     }
 
     &_front{
         &_card{
             width: 95px;
             height: 133px;
-            background: #FFFFFF;
+            background: #FFF;
             border-radius: 4px;
         }
     }
@@ -34,24 +32,27 @@
 .timer{
     display: flex;
     align-items: center;
+
     &_mil{
-        color: #FFFFFF;
+        color: #FFF;
         font-family: $font;
         font-style: normal;
         font-weight: 400;
         font-size: 64px;
         line-height: 72px;
     }
+
     &_sec{
-        color: #FFFFFF;
+        color: #FFF;
         font-family: $font;
         font-style: normal;
         font-weight: 400;
         font-size: 64px;
         line-height: 72px;
     }
+
     &_dot{
-        color: #FFFFFF;
+        color: #FFF;
         font-family: $font;
         font-style: normal;
         font-weight: 400;

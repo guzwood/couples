@@ -1,7 +1,4 @@
-const app = document.querySelector(".app")
-let intervalId
-const delay = 1000
-const gameDelay = 5000
+const app = document.querySelector(".app");
 
 window.application = {
     blocks: {},
@@ -12,20 +9,20 @@ window.application = {
 
     renderScreen: function (screenName) {
         window.application.timers.forEach((id) => {
-            clearInterval(id)
-        })
+            clearInterval(id);
+        });
 
         if (window.application.screens[screenName]) {
-            app.innerHTML = ""
+            app.innerHTML = "";
 
-            window.application.screens[screenName]()
+            window.application.screens[screenName]();
         }
     },
     renderBlock: function (blockName, container) {
         if (window.application.blocks[blockName]) {
-            window.application.blocks[blockName](container)
+            window.application.blocks[blockName](container);
         } else {
-            console.warn("Ошибка")
+            console.warn("Ошибка");
         }
     },
-}
+};

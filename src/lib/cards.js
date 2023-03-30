@@ -35,12 +35,12 @@ let cards = [
     "/src/lib/accets/img/туз крести .png",
     "/src/lib/accets/img/туз пики.png",
     "/src/lib/accets/img/туз черви.png",
-]
+];
 
-const cardObj = {}
+const cardObj = {};
 
 for (let i = 0; i < cards.length; i++) {
-    cardObj[i] = cards[i]
+    cardObj[i] = cards[i];
 }
 
-console.log(cardObj)
+console.log(cardObj);

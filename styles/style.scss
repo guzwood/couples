@@ -1,10 +1,13 @@
+@import 'start-menu';
+@import 'game';
+
 $background-blue: #004980;
-$blue:#C2F5FF;
-$font: 'StratosSkyeng';
+$blue: #C2F5FF;
+$font: stratosskyeng;
 
 @font-face {
-    font-family: 'StratosSkyeng';
-    src: url(/content/fonts/stratosskyeng-regular.otf);
+    font-family: stratosskyeng;
+    src: url("/content/fonts/stratosskyeng-regular.otf");
 }
 
 .center{
@@ -28,5 +31,4 @@ body{
 
 
 
-@import 'start-menu';
-@import 'game';
+
